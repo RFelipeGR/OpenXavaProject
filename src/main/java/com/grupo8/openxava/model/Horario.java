@@ -60,4 +60,11 @@ public class Horario {
     public void setDepartamento(Departamento departamento) {
         this.departamento = departamento;
     }
+
+    public boolean esHorarioValido() {
+        if (horaEntrada == null || horaSalida == null) {
+            return false;
+        }
+        return horaSalida.after(horaEntrada);
+    }
 }
