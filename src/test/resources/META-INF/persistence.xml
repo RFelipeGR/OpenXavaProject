@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+
+    <persistence-unit name="default">
+        <class>com.grupo8.openxava.model.ConsultaAsistencia</class>
+        <class>com.grupo8.openxava.model.Customer</class>
+        <class>com.grupo8.openxava.model.Departamento</class>
+        <class>com.grupo8.openxava.model.Empleado</class>
+        <class>com.grupo8.openxava.model.Horario</class>
+        <class>com.grupo8.openxava.model.RegistroAsistencia</class>
+        <class>com.grupo8.openxava.model.Usuario</class>
+
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbc.JDBCDriver"/>
+            <!-- Base de datos en memoria para tests: aislada, sin afectar datos de producción -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:testdb;DB_CLOSE_DELAY=-1"/>
+            <property name="javax.persistence.jdbc.user" value="sa"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+            <property name="hibernate.show_sql" value="false"/>
+        </properties>
+    </persistence-unit>
+</persistence>
