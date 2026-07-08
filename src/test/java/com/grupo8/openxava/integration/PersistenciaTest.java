@@ -35,9 +35,7 @@ public class PersistenciaTest {
 
     @After
     public void cerrarContexto() {
-        if (XPersistence.getManager().getTransaction().isActive()) {
-            XPersistence.getManager().getTransaction().rollback();
-        }
+        XPersistence.rollback();
         XPersistence.reset();
     }
 
